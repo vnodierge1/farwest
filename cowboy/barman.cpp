@@ -8,5 +8,5 @@ void Barman::servir_un_verre(Humain personne_servie)
     std::string txt= "VOICI VOTRE VERRE DE " ;
     std::string txt1= " ";
     std::string txt2= " COCO ";
-    parle(txt += boisson += txt1 += nom);
+    parle(txt += boisson += txt1 += nom);//append
 }

@@ -24,8 +24,8 @@ void Brigand::emprisonner(std::string nom_cowboy) {
 void Brigand::quel_est_ton_nom()
 {
     std::string name = Humain::quel_est_ton_nom();
-    std::string txt = " Le ";
-    parle(name += txt +=  m_look += "\n");
+    std::string texte = " Le ";
+    parle(name += texte +=  m_look += "\n");
 }
 void Brigand::presenter(void) {
     Humain::presenter();

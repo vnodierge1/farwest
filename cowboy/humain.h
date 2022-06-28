@@ -11,7 +11,7 @@ private:
     std::string m_nom;
     std::string m_boisson;
 //public: //à passer en protected
-protected:
+public:
     Humain():m_nom("luck"),m_boisson("eau")
     {
 
