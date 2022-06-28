@@ -20,8 +20,8 @@ public:
     }
     ~Barman(){}
     void servir_un_verre(Humain name);
-    friend void quel_est_ton_nom();
-    friend class Humain;
+    void quel_est_ton_nom();
+
 };
 
 #endif // BARMAN_H

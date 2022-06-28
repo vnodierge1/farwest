@@ -10,6 +10,7 @@ private:
 
     std::string m_nom;
     std::string m_boisson;
+    friend class Barman;
 //public: //à passer en protected
 protected:
     Humain():m_nom("luck"),m_boisson("eau")
@@ -24,7 +25,6 @@ protected:
     {
 
     }
-//public:
     void parle(std::string texte);
     void presenter(void);
     std::string quel_est_ton_nom();
