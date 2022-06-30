@@ -36,9 +36,7 @@ void textcolor (int color)
 
 int main()
 {
-    int dial1 = 0;
-    int dial2 = 0;
-    int dial3 = 0;
+    int dial1 = 0, dial2 = 0, dial3 = 0, dial4 = 0;
     Dame Tifa("Tifa", "The", "Rouge");                                             // Boisson ; Robe
     Brigand DoomFist("DoomFist", "Coca", "Rageux", 10, 60000, 0);                  // adjectif ; nbre kidnap ; prime ; emprisonnement
     Brigand Faucheur("Faucheur", "Poison", "le tenebreux", 3, 10000, 0);
@@ -74,7 +72,7 @@ int main()
 
     // -------------------------------------------------------------------------------------------------
     DoomFist.presenter();
-    //Tifa.hurle();
+    Tifa.hurle();
     DoomFist.kidnapper(Tifa);
 
     Narrateur.dial("Elle apercoit un individu au loin");
@@ -83,12 +81,12 @@ int main()
     cin >> dial2;
 
     if(dial2 == 1) {
-        //Tifa.hurle();
+        Tifa.hurle();
         McCree.presenter();
         McCree.tirer(DoomFist);
-        //McCree.liberer_dame(Tifa);
+        McCree.liberer_dame(Tifa);
         Tifa.se_fait_liberer(McCree);
-        //Tifa.changer_de_robe("bleu");
+        Tifa.changer_de_robe("bleu");
         DoomFist.emprisonner(McCree);
     }
     else if (dial2 ==2) {
@@ -106,9 +104,12 @@ int main()
     Cypher.presenter();
     Narrateur.dial("Le cowboy reclame un verre");
     Cypher.servir_un_verre(McCree);
+    textcolor(14);
     cout << "(McCree) - " << "SLURP ! Arrghhh delicieux !" << endl;
+    textcolor(15);
 
     if(dial2 == 1) {
+        Narrateur.dial("Le cowboy sors de la taverne une fois sa collation termine.");
 
     }
     else if(dial2 == 2) {
@@ -118,15 +119,27 @@ int main()
         //McCree.parle("Tsssss c'est quoi ce boucan dehors ?");
         textcolor(14);
         cout << "(McCree) - " << "Tsssss c'est quoi ce boucan dehors ?" << endl;
-        Chamber.presenter();
         Chamber.recherche_brigand(DoomFist);
+        textcolor(14);
+        cout << "(McCree) - " << "Hooy j vais vous aider ok ?" << endl;
+        Chamber.presenter();
+        textcolor(14);
+        cout << "(McCree) - " << "Je suis deja sur sa piste, j ai eu des informations comme quoi il serait a Dusty Canyon." << endl;
+        textcolor(11);
+        cout << "(Chamber) - " << "Allons y alors" << endl;
+        textcolor(15);
+        cout << "\n ************* Cliquer sur une touche pour aller dans le canyon *************" <<endl;
+        cin >> dial4;
+        Narrateur.dial("Apres une longue apres midi a traverser le desert, les 2 agents tomberent sur leur cible...");
+        DoomFist.presenter();
+        Chamber.coffrer_brigand(DoomFist);
     }
 
-    Chamber.coffrer_brigand(DoomFist);
+
 
     // tester :
     McCree.presenter();
-    DoomFist.presenter();
+
 
     textcolor(121);
     cout << "\n ************************** - THE END - ************************** \n" << endl;

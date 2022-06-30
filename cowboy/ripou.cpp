@@ -13,7 +13,7 @@ void Ripou::kidnapper(Dame &la_dame) {
     std::string text1 = "AH AH ! ";
     std::string text2 =", tu es miennes desormais !";
     std::string txt = text1 += nom_dame += text2;
-    parle(txt);
+    Sherif::parle(txt);
 
     // Nombre Dames Kidnappé
     m_nbre_kidnap ++;
@@ -27,16 +27,16 @@ void Ripou::emprisonner(Cowboy &le_cowboy) {
     std::string text1 = "Damned, je suis fait !";
     std::string text2 = ", tu m'as eu...";
     std::string txt = text1 += nom_cowboy += text2;
-    parle(txt);
+    Sherif::parle(txt);
 
     // Incarcération
         m_prison = 1;
 }
 
 
-int Ripou::get_mise_a_prix() {
-    return m_recompense;
-}
+//int Ripou::get_mise_a_prix() {
+//    return m_recompense;
+//}
 
 
 void Ripou::demasque() {
@@ -45,7 +45,7 @@ void Ripou::demasque() {
 
 // ---------------------------- Surcharge ----------------------------
 std::string Ripou::quel_est_ton_nom() {
-    std::string name = Humain::quel_est_ton_nom();
+    std::string name = Sherif::quel_est_ton_nom();
 
 //    std::string text1 = "Je suis ";
 //    std::string text2 = " le ";
@@ -55,15 +55,15 @@ std::string Ripou::quel_est_ton_nom() {
 }
 
 void Ripou::presenter() {
-    std::string name = Humain::quel_est_ton_nom();
-    std::string boisson = Humain::quel_est_ta_boisson();
+    std::string name = Sherif::quel_est_ton_nom();
+    std::string boisson = Sherif::quel_est_ta_boisson();
 
     std::string text1 = "MWAHAHAHAHAHAAA, je suis ";
     std::string text2 = " et j'adore le ";
     std::string text3 = " ! \n";
     std::string txt1 = text1 += name;
     std::string txt2 = boisson += text3;
-    parle(txt1 += text2 += txt2);
+    Sherif::parle(txt1 += text2 += txt2);
 
     //std::string text4 = "Les gens me redoutent et j ai deja kidnapper " << m_nbre_kidnap << " dames ! \n";
     cout << "(" << name << ") - Les gens me redoutent et j ai deja kidnapper " << m_nbre_kidnap << " dames ! \n";

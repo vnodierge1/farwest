@@ -1,49 +1,55 @@
 #include "dame.h"
-#include "histoire.h"
+#include "humain.h"
+#include <string>
+#include <iostream>
 
-void Dame::se_faire_kidnapper(void)
-{
-  textcolor(13);
-  std::string hurle=" AHHHHHHHHHH ";
-  //std::string txt= " \n";
-  parle(hurle /*+= txt*/);
-  textcolor(15);
-}
-void Dame::se_fait_liberer(Humain nom_sauveur)
-{
+using namespace std;
+
+void Dame::hurle(void) {
     textcolor(13);
-    std::string nom = nom_sauveur.quel_est_ton_nom();
-    std::string txt = "Merci ";
-    std::string txt1= nom += " de m avoir sauver !!!! ";
-    parle(txt += txt1);
-    textcolor(15);
+    std::string text1 = " A l'aide !!!! ";
+    parle(text1);
 }
-void Dame::change_robe(std::string couleur)
-{
+
+void Dame::se_fait_liberer(Humain &le_hero) {
     textcolor(13);
-    m_couleur_robe=couleur;
-    std::string txt= "Regardez ma nouvelle robe ";
-    std::string txt2= couleur;
-    std::string txt3= txt += txt2;
-    parle(txt3);
-    textcolor(15);
+    std::string nom_hero = le_hero.quel_est_ton_nom();
+
+    std::string text1 = "*** se fait liberer ****";
+    m_etat = 1;                                         // 1 => Libre
+    parle(text1);
+
+    std::string text2 = "Merci ";
+    std::string text3 = ", vous etes un hero !";
+    std::string txt = text2 += nom_hero += text3;
+    parle(txt);
 }
-std::string Dame::quel_est_ton_nom()
-{
+
+void Dame::changer_de_robe(std::string change_robe) {
     textcolor(13);
+    m_couleur_robe = change_robe;
+
+    std::string text1 = "Regardez ma nouvelle robe ";
+    text1 += change_robe;
+    parle(text1);
+}
+
+// ---------------------------- Surcharge ----------------------------
+
+std::string Dame::quel_est_ton_nom() {
     std::string name = Humain::quel_est_ton_nom();
-    //std::string txt = "Je suis miss ";
-    //std::string txt2 = txt += name ;
-    //parle(txt2 );
-    textcolor(15);
+
+//    std::string text1 = "Je suis miss ";
+//    parle(text1 += name);
+
     return name;
 }
-void Dame::presenter(void) {
 
+
+void Dame::presenter() {
     textcolor(13);
-    Humain::presenter();
-    std::string txt="J'ai une robe ";
-    parle(txt += m_couleur_robe );
-    textcolor(15);
+    std::string text1 = "Regardez ma nouvelle robe ";
+    std::string text2 = ", magnifique n'est ce pas ?\n";
 
+    parle(text1 += m_couleur_robe += text2);
 }
