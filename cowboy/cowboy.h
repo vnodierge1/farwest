@@ -8,6 +8,7 @@ class Cowboy : public Humain
 private:
     int m_popularite;
     std::string m_adj;
+    friend class Brigand;
 public:
     Cowboy(std::string nom,std::string boisson,int popularite,std::string adj) : Humain(nom,boisson), m_popularite(popularite),m_adj(adj)
     {

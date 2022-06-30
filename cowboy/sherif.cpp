@@ -1,4 +1,3 @@
-#include "histoire.h"
 #include "sherif.h"
 #include "humain.h"
 #include "cowboy.h"
@@ -8,35 +7,44 @@
 
 using namespace std;
 
-void Sherif::coffrer_brigand(Humain le_brigand)
-{
-    textcolor(9);
+void Sherif::coffrer_brigand(Humain &le_brigand) {
+    textcolor(11);
     std::string nom_brigand = le_brigand.quel_est_ton_nom();
     //std::string nom_sherif = Humain::quel_est_ton_nom();
     std::string text1 = "AU NOM DE LA LOI, je vous arrete ";
-    std::string text2 = " !  ";
+    std::string text2 = " ! ";
     parle(text1 += nom_brigand += text2);
-    textcolor(15);
 
+    // Capture :
+    m_nbre_brigand_capture ++;
 }
+
+
+
 
 void Sherif::recherche_brigand(Brigand &le_brigand) {
-    //std::string nom_brigand = le_brigand.quel_est_ton_nom();
-    textcolor(9);
+    textcolor(11);
+    std::string nom_brigand = le_brigand.quel_est_ton_nom();
     int reward = le_brigand.m_recompense;
-    std::string name = le_brigand.quel_est_ton_nom();
+    std::string rewardTXT = to_string(reward);
+    textcolor(11);
+    cout << "** Placarde des affiche dans la ville **";
+    cout << "\n";
+    textcolor(11);
+    std::string text1 = "OYEZ OYEZ OYEZ BRAVES GENS !  ";
+    std::string txt1 = text1 += rewardTXT;
+    textcolor(11);
+    std::string text2 = "$ a celui qui arretera ";
+    std::string text3 = ", mort ou vif !";
+    std::string txt2 = text2 += nom_brigand += text3;
 
-    //cout << "** Placarde des affiche dans la ville";
-    textcolor(9);
-    std::string text ="OYEZ OYEZ BRAVES GENS !!  ";
-    std::string text2 = " $ a qui arretera ";
-    parle(text += to_string(reward) += text2 += name += ", mort ou vif !! ");
-    textcolor(15);
+    parle(txt1 += txt2);
 }
 
+// ---------------------------- Surcharge ----------------------------
 void Sherif::presenter(void) {
-    textcolor(9);
+    textcolor(11);
     std::string text1 = "Salutation, je suis le Sherif ";
-    parle(text1 += m_nom );
-    textcolor(15);
+
+    parle(text1 += m_nom);
 }

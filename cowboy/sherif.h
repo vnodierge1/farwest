@@ -1,25 +1,35 @@
 #ifndef SHERIF_H
 #define SHERIF_H
 
-#include "histoire.h"
+#include "cowboy.h"
+#include "brigand.h"
+#include "humain.h"
+
+using namespace std;
 
 class Sherif : public Cowboy
 {
 private:
-    int nbre_brigand_capture;
+    int m_nbre_brigand_capture;
+
 public:
-    Sherif(std::string nom,int nbr_coffre,std::string adj):Cowboy(nom,"Whisky",nbr_coffre,adj)  // Par défaut
-    {
-
-    }
-    Sherif():nbre_brigand_capture(0)  // Par défaut
+    Sherif():m_nbre_brigand_capture(0)
     {
 
     }
 
-    void coffrer_brigand(Humain le_brigand);
+    Sherif(std::string nom, int nbre_coffre, std::string adj):Cowboy(nom,"whiksy",nbre_coffre,adj)  // Par défaut
+    {
+
+    }
+
+    void coffrer_brigand(Humain &le_brigand);
     void recherche_brigand(Brigand &le_brigand);
     void presenter(void);
+    void textcolor (int color)
+    {
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),color);
+    }
 
     friend class Humain;
     friend class Brigand;

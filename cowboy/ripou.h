@@ -19,7 +19,7 @@ private:
 
     friend class Sherif;
 public:
-    Ripou(std::string nom,std::string boisson,std::string look, int nbre_kidnap, int recomp, bool prison):/*Hors_la_loi(nom,boisson),*/
+    Ripou(std::string look, int nbre_kidnap, int recomp, bool prison):/*Hors_la_loi(nom,boisson),*/
     m_look(look), m_nbre_kidnap(nbre_kidnap), m_recompense(recomp), m_prison(prison)
     {
 

@@ -2,8 +2,12 @@
 #define BRIGAND_H
 
 #include "histoire.h"
+//#include "cowboy.h"
+//#include "dame.h"
 //#include "hors_la_loi.h"
 //class Hors_la_loi;
+class Dame;
+class Cowboy;
 
 class Brigand : public Humain//, public Hors_la_loi
 {
