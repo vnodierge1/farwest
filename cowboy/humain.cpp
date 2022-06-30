@@ -1,4 +1,4 @@
-
+#include "histoire.h"
 #include "humain.h"
 #include <string>
 #include <iostream>
@@ -27,6 +27,6 @@ std::string Humain::quel_est_ton_nom() {
     return m_nom;
 }
 
-std::string Humain::quel_est_ta_boison() {
+std::string Humain::quel_est_ta_boisson() {
     return m_boisson;
 }

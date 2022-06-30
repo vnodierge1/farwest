@@ -9,8 +9,12 @@ SOURCES += \
         cowboy.cpp \
         dame.cpp \
         histoire.cpp \
+        hors_la_loi.cpp \
         humain.cpp \
-        main.cpp
+        main.cpp \
+        narrateur.cpp \
+        ripou.cpp \
+        sherif.cpp
 
 HEADERS += \
     barman.h \
@@ -18,4 +22,8 @@ HEADERS += \
     cowboy.h \
     dame.h \
     histoire.h \
-    humain.h
+    hors_la_loi.h \
+    humain.h \
+    narrateur.h \
+    ripou.h \
+    sherif.h

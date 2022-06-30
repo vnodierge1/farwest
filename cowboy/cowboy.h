@@ -1,10 +1,7 @@
 #ifndef COWBOY_H
 #define COWBOY_H
 
-#include "humain.h"
-#include "dame.h"
-#include "cowboy.h"
-#include "brigand.h"
+#include "histoire.h"
 
 class Cowboy : public Humain
 {
@@ -25,8 +22,8 @@ public:
 
     }
     ~Cowboy(){}
-    void tirer(std::string nom_cowboy,std::string nom_mechant);
-    void quel_est_ton_nom();
+    void tirer(Humain nom_mechant);
+    std::string quel_est_ton_nom();
     void presenter(void);
 };
 #endif // COWBOY_H
