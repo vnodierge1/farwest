@@ -1,0 +1,11 @@
+debug/barman.o
+debug/brigand.o
+debug/cowboy.o
+debug/dame.o
+debug/histoire.o
+debug/hors_la_loi.o
+debug/humain.o
+debug/main.o
+debug/narrateur.o
+debug/ripou.o
+debug/sherif.o
